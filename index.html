@@ -1,271 +1,450 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RM Multiservices | Votre projet, notre savoir-faire</title>
-  <meta name="description" content="RM Multiservices à La Réunion : travaux de rénovation, entretien de piscine, dépannage et conciergerie. Demandez votre devis.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#006CFF">
-  <link rel="icon" href="assets/rm-mark.png">
+  <meta name="description" content="RM Multiservices à La Réunion : travaux de rénovation, entretien de piscine, dépannage et conciergerie. Une seule entreprise pour vos besoins du quotidien.">
+  <link rel="icon" href="assets/rm-mark.png" type="image/png">
+  <title>RM Multiservices | Travaux de rénovation, piscine, dépannage & conciergerie</title>
+
   <style>
     :root{
       --blue:#006CFF;
-      --blue2:#0050D5;
-      --blue3:#0036C0;
-      --ink:#0a0d12;
-      --muted:#5c6573;
-      --line:#e7ebf2;
-      --soft:#f5f8fd;
-      --white:#fff;
-      --shadow:0 24px 70px rgba(0,47,120,.12);
+      --blue-2:#0757D9;
+      --blue-deep:#00238A;
+      --ink:#090D14;
+      --muted:#667085;
+      --soft:#F4F8FF;
+      --line:#E5ECF6;
+      --white:#FFFFFF;
+      --shadow:0 22px 70px rgba(0,42,112,.12);
       --radius:26px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
     .container{width:min(1180px,calc(100% - 40px));margin:auto}
 
     /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(231,235,242,.9)}
-    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .brand img{width:54px;height:42px;object-fit:cover;object-position:left center;border-radius:9px}
-    .brand strong{font-size:16px;letter-spacing:.08em;white-space:nowrap}
-    .brand span{display:block;font-size:10px;letter-spacing:.22em;color:var(--blue);font-weight:800;margin-top:2px}
-    nav{display:flex;align-items:center;gap:28px}
-    nav a{font-size:14px;font-weight:700;color:#383e47}
-    nav a:hover{color:var(--blue)}
-    .nav-cta{padding:12px 17px;border-radius:999px;background:var(--ink);color:white}
-    .nav-cta:hover{background:var(--blue);color:white}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,236,246,.9)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center}
+    .brand img{width:220px;height:auto;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700;color:#313846}
+    .nav-links a{transition:.2s ease}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta{background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(9,13,20,.12)}
+    .nav-cta:hover{background:var(--blue)!important;color:#fff!important}
+    .menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;width:44px;height:44px;cursor:pointer}
 
     /* Hero */
-    .hero{padding:86px 0 72px;background:radial-gradient(circle at 84% 18%,rgba(0,108,255,.14),transparent 30%),linear-gradient(180deg,#fff 0%,#f8fbff 100%);overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border-radius:999px;background:rgba(0,108,255,.08);color:var(--blue);font-weight:900;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
-    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(0,108,255,.10)}
-    h1{font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-.045em;max-width:700px}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#F5F9FF 55%,#EAF3FF 100%);padding:94px 0 82px}
+    .hero:before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;border:1px solid rgba(0,108,255,.11);right:-270px;top:-280px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;background:rgba(0,108,255,.08);color:var(--blue);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:900;margin-bottom:18px}
+    .eyebrow i{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 6px rgba(0,108,255,.10)}
+    h1{font-size:clamp(42px,6.2vw,78px);line-height:.98;letter-spacing:-3px;max-width:760px}
     h1 span{color:var(--blue)}
-    .lead{font-size:19px;color:var(--muted);max-width:650px;margin:24px 0 30px}
-    .actions{display:flex;flex-wrap:wrap;gap:12px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 21px;border-radius:15px;font-weight:900;border:1px solid transparent;transition:.2s ease}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{color:white;background:linear-gradient(135deg,var(--blue),var(--blue3));box-shadow:0 14px 30px rgba(0,108,255,.22)}
-    .btn-secondary{background:white;border-color:var(--line)}
-    .hero-card{background:#061328;border-radius:32px;padding:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,rgba(0,108,255,.25),transparent 35%),linear-gradient(135deg,rgba(0,108,255,.18),transparent 45%)}
-    .hero-card img{position:relative;width:100%;border-radius:20px}
-    .hero-note{position:relative;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:15px 4px 2px;color:rgba(255,255,255,.9);font-size:13px}
-    .hero-note b{color:#fff}
+    .hero-copy{font-size:18px;color:var(--muted);max-width:650px;margin:24px 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 21px;border-radius:15px;font-weight:900;font-size:14px;transition:.22s ease}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--blue),#2F85FF);box-shadow:0 14px 34px rgba(0,108,255,.24)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-light{background:#fff;border:1px solid var(--line)}
+    .btn-light:hover{border-color:rgba(0,108,255,.35);color:var(--blue)}
+    .hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:#475467;font-size:12px;font-weight:800}
+    .hero-meta span{display:flex;align-items:center;gap:8px}
+    .hero-meta b{width:7px;height:7px;background:var(--blue);border-radius:50%}
+    .hero-card{position:relative;border-radius:34px;padding:14px;background:linear-gradient(145deg,#07101e,#00358C 65%,#006CFF);box-shadow:0 28px 80px rgba(0,47,123,.22)}
+    .hero-card img{width:100%;aspect-ratio:1/0.92;object-fit:cover;border-radius:24px}
+    .hero-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 6px 4px;color:#fff;font-size:12px;font-weight:800}
+    .hero-card-bottom span:last-child{color:#A9D1FF}
+
+    /* Common */
+    section{padding:96px 0}
+    .section-kicker{color:var(--blue);font-size:11px;letter-spacing:2px;font-weight:900;text-transform:uppercase;margin-bottom:12px}
+    .section-title{font-size:clamp(33px,4.3vw,54px);line-height:1.02;letter-spacing:-1.8px}
+    .section-subtitle{color:var(--muted);max-width:720px;margin-top:14px;font-size:16px}
+    .section-head{margin-bottom:46px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
 
     /* Services */
-    section{padding:94px 0}
-    .section-kicker{color:var(--blue);font-weight:900;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:11px}
-    .section-title{font-size:clamp(34px,5vw,54px);line-height:1.03;letter-spacing:-.035em}
-    .section-sub{color:var(--muted);max-width:680px;margin-top:14px}
-    .services{background:#fff}
-    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;box-shadow:0 8px 30px rgba(0,23,60,.04);transition:.22s ease}
-    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(0,108,255,.24)}
-    .icon{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;background:rgba(0,108,255,.09);color:var(--blue);font-weight:900;font-size:24px;margin-bottom:24px}
-    .card h3{font-size:22px;margin-bottom:9px}
-    .card p{font-size:14px;color:var(--muted)}
-    .label{display:inline-block;margin-top:18px;color:var(--blue);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service{position:relative;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;box-shadow:0 12px 34px rgba(14,47,95,.045);overflow:hidden;transition:.25s ease}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(0,108,255,.25)}
+    .service:after{content:"";position:absolute;right:-28px;bottom:-40px;width:125px;height:125px;border-radius:50%;border:1px solid rgba(0,108,255,.08)}
+    .icon{width:54px;height:54px;border-radius:17px;background:rgba(0,108,255,.09);color:var(--blue);display:grid;place-items:center;margin-bottom:22px}
+    .icon svg{width:27px;height:27px}
+    .service h3{font-size:21px;line-height:1.1;margin-bottom:10px}
+    .service p{font-size:14px;color:var(--muted)}
+    .service small{display:inline-block;margin-top:18px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase}
 
-    /* Brand band */
-    .brand-band{background:var(--soft)}
-    .band-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
-    .band-panel{border-radius:30px;background:linear-gradient(145deg,#081526,#053f9e 70%,#006CFF);padding:36px;min-height:390px;display:flex;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .band-panel::after{content:"";position:absolute;width:450px;height:220px;border:2px solid rgba(255,255,255,.12);border-left-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;left:-80px;bottom:-15px;transform:rotate(-8deg)}
-    .band-panel-inner{position:relative;z-index:2}
-    .band-panel h3{color:#fff;font-size:33px;line-height:1.06;max-width:390px}
-    .band-panel p{color:rgba(255,255,255,.73);margin-top:14px;max-width:420px}
-    .mini-logo{font-size:52px;font-weight:1000;letter-spacing:-.08em;margin-bottom:32px;color:#fff}.mini-logo span{color:#63a4ff}
-    .checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-    .check{display:flex;gap:10px;align-items:center;font-size:13px;font-weight:800}
-    .check i{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:rgba(0,108,255,.10);color:var(--blue);font-style:normal}
+    /* Highlight */
+    .highlight{background:var(--soft)}
+    .highlight-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+    .highlight-visual{background:linear-gradient(145deg,#07101e,#003A96 60%,#006CFF);border-radius:32px;padding:30px;box-shadow:var(--shadow);min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .highlight-visual:before{content:"";position:absolute;width:390px;height:390px;border:1px solid rgba(255,255,255,.15);border-radius:50%}
+    .highlight-visual img{position:relative;z-index:2;width:min(100%,500px);max-height:350px;object-fit:contain}
+    .points{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:28px}
+    .point{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800}
+    .point b{width:24px;height:24px;border-radius:50%;background:rgba(0,108,255,.10);color:var(--blue);display:grid;place-items:center;font-size:12px}
+
+    /* Realisations */
+    .realisations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .real-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(14,47,95,.05)}
+    .real-media{height:220px;display:grid;place-items:center;background:linear-gradient(145deg,#0A1B36,#0054C8 60%,#4A9BFF);position:relative}
+    .real-media:nth-child(2){background:linear-gradient(145deg,#0A1730,#006CFF 65%,#9CC8FF)}
+    .real-media:nth-child(3){background:linear-gradient(145deg,#111827,#0045A8 60%,#48A3FF)}
+    .real-placeholder{color:#fff;text-align:center;padding:24px}
+    .real-placeholder strong{display:block;font-size:26px;margin-bottom:6px}
+    .real-placeholder span{font-size:12px;color:rgba(255,255,255,.72)}
+    .real-body{padding:21px}
+    .real-body .tag{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;font-weight:900;color:var(--blue)}
+    .real-body h3{margin-top:8px;font-size:20px}
+    .real-body p{margin-top:7px;color:var(--muted);font-size:13px}
+    .real-note{margin-top:18px;padding:14px 16px;border-radius:14px;background:var(--soft);color:#475467;font-size:12px}
+
+    /* Process */
+    .process{background:#fff}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .process-card{padding:28px;border:1px solid var(--line);border-radius:22px}
+    .process-number{font-size:13px;font-weight:900;color:var(--blue);letter-spacing:1px}
+    .process-card h3{font-size:22px;margin-top:12px}
+    .process-card p{color:var(--muted);font-size:14px;margin-top:8px}
 
     /* CTA */
-    .cta{padding:0 0 26px}
-    .cta-box{border-radius:30px;padding:48px;background:linear-gradient(135deg,#061225 0%,#073d91 60%,#006CFF 100%);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:32px;box-shadow:0 24px 55px rgba(0,48,120,.22)}
-    .cta-box h2{font-size:clamp(30px,4vw,47px);line-height:1.04}.cta-box p{color:rgba(255,255,255,.72);margin-top:10px;max-width:620px}
-    .cta .btn-secondary{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.20);color:#fff}
-    .cta .btn-secondary:hover{background:rgba(255,255,255,.14)}
+    .cta{padding-top:20px}
+    .cta-box{background:linear-gradient(135deg,#061121,#003A91 60%,#006CFF);border-radius:30px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:#fff;box-shadow:0 24px 70px rgba(0,48,122,.23)}
+    .cta-box h2{font-size:clamp(30px,4vw,45px);line-height:1.02;letter-spacing:-1px}
+    .cta-box p{color:rgba(255,255,255,.74);margin-top:10px;max-width:650px}
+    .cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn-white{background:#fff;color:#0A0D12}
+    .btn-ghost{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.07);color:#fff}
 
     /* Contact */
-    .contact{background:#fff}
-    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:40px}
-    .contact-panel{border:1px solid var(--line);border-radius:28px;padding:32px;background:#fff}
-    .contact-panel h3{font-size:28px}.contact-panel>p{color:var(--muted);margin:10px 0 26px}
-    .contact-list{display:grid;gap:12px}
-    .contact-row{display:flex;align-items:center;gap:13px;padding:14px;border-radius:16px;background:var(--soft)}
-    .contact-row .bubble{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:rgba(0,108,255,.09);color:var(--blue);font-weight:900}
-    .contact-row small{display:block;color:#788190;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:900}.contact-row strong{font-size:14px}
-    form{display:grid;gap:14px} .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field label{font-size:11px;font-weight:900;color:#323841;text-transform:uppercase;letter-spacing:.08em}.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#fbfcfe;font:inherit;outline:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,108,255,.08)} textarea{min-height:130px;resize:vertical}.form-note{font-size:11px;color:#7a8290}
+    .contact{background:var(--soft)}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
+    .contact-card,.form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 12px 34px rgba(14,47,95,.05)}
+    .contact-card h3,.form-card h3{font-size:28px}
+    .contact-card>p,.form-card>p{color:var(--muted);margin-top:9px}
+    .contact-list{display:grid;gap:12px;margin-top:26px}
+    .contact-item{display:flex;gap:13px;align-items:center;padding:13px;border-radius:15px;background:#F7FAFF}
+    .contact-icon{width:44px;height:44px;border-radius:13px;background:rgba(0,108,255,.09);color:var(--blue);display:grid;place-items:center;font-weight:900}
+    .contact-item small{display:block;color:#7A8495;font-size:10px;text-transform:uppercase;letter-spacing:1.2px}
+    .contact-item strong{font-size:14px}
+    .form{margin-top:24px;display:grid;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:11px;font-weight:900;color:#3E4653}
+    .field{display:grid;gap:7px}
+    input,select,textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:13px 14px;background:#FBFCFE;outline:none;color:var(--ink);transition:.2s}
+    input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,108,255,.08)}
+    textarea{min-height:135px;resize:vertical}
+    .form-note{font-size:11px;color:#7A8495}
 
     /* Footer */
-    footer{border-top:1px solid var(--line);padding:25px 0;background:#fff}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer small{color:#788190}.footer-links{display:flex;gap:18px;font-size:12px;font-weight:800}.footer-links a:hover{color:var(--blue)}
+    footer{border-top:1px solid var(--line);padding:26px 0}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:180px}
+    .footer-copy{font-size:11px;color:#7A8495}
+    .footer-links{display:flex;gap:20px;font-size:12px;font-weight:800;color:#475467}
 
-    @media(max-width:980px){
-      .hero-grid,.band-grid,.contact-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr 1fr}.hero-card{max-width:760px}.cta-box{flex-direction:column;align-items:flex-start}.band-panel{min-height:330px}
+    /* Responsive */
+    @media(max-width:1000px){
+      .hero-grid,.highlight-grid,.contact-grid{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .realisations-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr}
+      .highlight-visual{min-height:340px}
+      .cta-box{flex-direction:column;align-items:flex-start}
+      .hero{padding-top:72px}
     }
-    @media(max-width:700px){
-      .container{width:min(100% - 28px,1180px)}.nav{min-height:70px}.brand img{width:48px;height:38px}.brand strong{font-size:14px}nav{display:none}.hero{padding:68px 0 56px}.lead{font-size:17px}.hero-card{padding:12px;border-radius:25px}.hero-note{font-size:11px}.service-grid{grid-template-columns:1fr}.checks,.row{grid-template-columns:1fr}.band-panel,.contact-panel{padding:25px}.cta-box{padding:33px 24px}.footer{flex-direction:column;align-items:flex-start}
+    @media(max-width:720px){
+      .container{width:min(100% - 28px,1180px)}
+      .brand img{width:185px}
+      .nav-links{display:none;position:absolute;left:14px;right:14px;top:74px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:14px}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:8px 4px}
+      .menu-btn{display:grid;place-items:center}
+      .nav-cta{text-align:center}
+      .services-grid,.realisations-grid,.form-row,.points{grid-template-columns:1fr}
+      .hero{padding:60px 0 68px}
+      h1{letter-spacing:-1.8px}
+      .hero-copy{font-size:16px}
+      section{padding:72px 0}
+      .hero-card{padding:10px}
+      .hero-card-bottom{padding:12px 4px 2px;font-size:11px}
+      .highlight-visual{min-height:290px;padding:22px}
+      .cta-box{padding:32px 25px}
+      .contact-card,.form-card{padding:23px}
+      .footer{flex-direction:column;align-items:flex-start}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a href="#accueil" class="brand" aria-label="RM Multiservices">
-        <img src="assets/rm-mark.png" alt="Logo RM Multiservices">
-        <div><strong>RM MULTISERVICES</strong><span>LA RÉUNION</span></div>
-      </a>
-      <nav aria-label="Navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Demander un devis</a>
-      </nav>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#accueil" aria-label="RM Multiservices">
+      <img src="assets/logo-horizontal.png" alt="RM Multiservices - logo">
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><i></i> RM Multiservices · La Réunion</div>
+        <h1>Votre projet,<br><span>notre savoir-faire.</span></h1>
+        <p class="hero-copy">
+          Travaux de rénovation, entretien de piscine, dépannage et conciergerie :
+          une seule entreprise pour des interventions soignées, claires et adaptées à vos besoins.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Demander un devis →</a>
+          <a class="btn btn-light" href="tel:0693433434">0693 43 34 34</a>
+        </div>
+        <div class="hero-meta">
+          <span><b></b> Réactif</span>
+          <span><b></b> Travail soigné</span>
+          <span><b></b> Interlocuteur unique</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="assets/logo-principal.png" alt="Logo principal RM Multiservices">
+        <div class="hero-card-bottom">
+          <span>Votre projet, notre savoir-faire</span>
+          <span>La Réunion</span>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero" id="accueil">
-      <div class="container hero-grid">
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
         <div>
-          <div class="eyebrow">RM Multiservices · La Réunion</div>
-          <h1>Votre projet,<br><span>notre savoir-faire.</span></h1>
-          <p class="lead">Travaux de rénovation, entretien de piscine, dépannage et conciergerie : un seul interlocuteur pour des interventions soignées, claires et adaptées à vos besoins.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contact">Demander un devis →</a>
-            <a class="btn btn-secondary" href="tel:0693433434">0693 43 34 34</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <img src="assets/logo-principal.png" alt="Logo principal RM Multiservices">
-          <div class="hero-note"><span><b>Réactivité</b> · Qualité · Confiance</span><span>La Réunion</span></div>
+          <div class="section-kicker">Nos prestations</div>
+          <h2 class="section-title">Des services utiles,<br>réalisés avec soin.</h2>
+          <p class="section-subtitle">Une offre volontairement simple et lisible pour répondre à vos besoins du quotidien.</p>
         </div>
       </div>
-    </section>
 
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-kicker">Nos prestations</div>
-        <h2 class="section-title">Des services utiles,<br>réalisés avec soin.</h2>
-        <p class="section-sub">Une offre volontairement simple et lisible pour répondre à vos besoins au quotidien.</p>
+      <div class="services-grid">
+        <article class="service">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/><path d="m8.5 11 2-2 1.5 1.5 3.5-3.5"/></svg>
+          </div>
+          <h3>Travaux de rénovation</h3>
+          <p>Rénovation légère, aménagement et amélioration de l'habitat selon les besoins du projet.</p>
+          <small>Habitat & aménagement</small>
+        </article>
 
-        <div class="service-grid">
-          <article class="card">
-            <div class="icon">↗</div>
-            <h3>Travaux de rénovation</h3>
-            <p>Rénovation légère, aménagement et amélioration de l'habitat selon les besoins du projet.</p>
-            <span class="label">Habitat & aménagement</span>
-          </article>
-          <article class="card">
-            <div class="icon">≈</div>
-            <h3>Piscine</h3>
-            <p>Entretien, nettoyage, suivi et petites interventions pour garder votre piscine propre et agréable.</p>
-            <span class="label">Entretien & suivi</span>
-          </article>
-          <article class="card">
-            <div class="icon">✦</div>
-            <h3>Dépannage</h3>
-            <p>Interventions ponctuelles pour résoudre rapidement les problèmes et remettre les choses en ordre.</p>
-            <span class="label">Intervention rapide</span>
-          </article>
-          <article class="card">
-            <div class="icon">⌂</div>
-            <h3>Conciergerie</h3>
-            <p>Prestations de proximité pour villas et logements saisonniers : contrôle, entretien et suivi.</p>
-            <span class="label">Villas & saisonnier</span>
-          </article>
+        <article class="service">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18V9a3 3 0 0 1 6 0v9"/><path d="M12 11h5a2 2 0 0 1 2 2v5M3 19c2 1.2 4 1.2 6 0 2-1.2 4-1.2 6 0 2 1.2 4 1.2 6 0"/></svg>
+          </div>
+          <h3>Piscine</h3>
+          <p>Entretien, nettoyage, suivi et petites interventions pour garder votre piscine propre et agréable.</p>
+          <small>Entretien & suivi</small>
+        </article>
+
+        <article class="service">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14.7 6.3 3-3 3 3-3 3M4 20l8.2-8.2"/><path d="m9.8 4.5 9.7 9.7M4 20l3.5-.7 4.8-4.8-2.8-2.8-4.8 4.8L4 20Z"/></svg>
+          </div>
+          <h3>Dépannage</h3>
+          <p>Interventions ponctuelles pour résoudre rapidement les problèmes et remettre les choses en ordre.</p>
+          <small>Intervention rapide</small>
+        </article>
+
+        <article class="service">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5h16v5H4z"/><path d="M7 11.5V8h10v3.5M5 16.5v2M19 16.5v2M8 18.5h8"/></svg>
+          </div>
+          <h3>Conciergerie</h3>
+          <p>Prestations de proximité pour villas et logements saisonniers : contrôle, entretien et suivi.</p>
+          <small>Villas & saisonnier</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight" id="apropos">
+    <div class="container highlight-grid">
+      <div class="highlight-visual">
+        <img src="assets/logo-horizontal.png" alt="Logo horizontal RM Multiservices">
+      </div>
+      <div>
+        <div class="section-kicker">L'esprit RM Multiservices</div>
+        <h2 class="section-title">Une approche simple :<br>être efficace, disponible et sérieux.</h2>
+        <p class="section-subtitle">
+          RM Multiservices privilégie une relation directe, des prestations clairement définies et un suivi simple pour les particuliers, propriétaires et professionnels.
+        </p>
+        <div class="points">
+          <div class="point"><b>✓</b> Réactivité</div>
+          <div class="point"><b>✓</b> Travail soigné</div>
+          <div class="point"><b>✓</b> Interlocuteur unique</div>
+          <div class="point"><b>✓</b> Prestations adaptées</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="brand-band" id="apropos">
-      <div class="container band-grid">
-        <div class="band-panel">
-          <div class="band-panel-inner">
-            <div class="mini-logo">R<span>M</span></div>
-            <h3>Un interlocuteur unique pour vos besoins du quotidien.</h3>
-            <p>RM Multiservices privilégie la simplicité, la disponibilité et une réalisation soignée.</p>
-          </div>
-        </div>
+  <section id="realisations">
+    <div class="container">
+      <div class="section-head">
         <div>
-          <div class="section-kicker">Pourquoi RM Multiservices</div>
-          <h2 class="section-title">Une approche simple : être efficace, disponible et sérieux.</h2>
-          <p class="section-sub">Que vous ayez besoin d'une intervention ponctuelle ou d'un suivi régulier, chaque demande commence par l'écoute de votre besoin et une proposition claire.</p>
-          <div class="checks">
-            <div class="check"><i>✓</i> Réactivité</div>
-            <div class="check"><i>✓</i> Travail soigné</div>
-            <div class="check"><i>✓</i> Interlocuteur unique</div>
-            <div class="check"><i>✓</i> Prestations adaptées</div>
-          </div>
+          <div class="section-kicker">Réalisations</div>
+          <h2 class="section-title">Des projets à montrer.<br>Des résultats à raconter.</h2>
+          <p class="section-subtitle">Cette galerie sera progressivement remplie avec tes propres photos de chantiers, interventions et avant / après.</p>
         </div>
       </div>
-    </section>
 
-    <section class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Vous avez un projet ?</h2>
-            <p>Décrivez-nous votre besoin. Nous vous répondrons rapidement pour voir ensemble la meilleure solution.</p>
-          </div>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contact" style="background:#fff;color:#08111f">Demander un devis</a>
-            <a class="btn btn-secondary" href="tel:0693433434">Appeler maintenant</a>
-          </div>
+      <div class="realisations-grid">
+        <article class="real-card">
+          <div class="real-media"><div class="real-placeholder"><strong>Avant / Après</strong><span>Photo de rénovation à ajouter</span></div></div>
+          <div class="real-body"><div class="tag">Travaux de rénovation</div><h3>Votre prochaine réalisation</h3><p>Une présentation courte du besoin, de l'intervention et du résultat.</p></div>
+        </article>
+        <article class="real-card">
+          <div class="real-media"><div class="real-placeholder"><strong>Piscine</strong><span>Photo d'entretien à ajouter</span></div></div>
+          <div class="real-body"><div class="tag">Piscine</div><h3>Entretien & suivi</h3><p>Un espace idéal pour montrer la qualité de tes interventions avant / après.</p></div>
+        </article>
+        <article class="real-card">
+          <div class="real-media"><div class="real-placeholder"><strong>Dépannage</strong><span>Photo d'intervention à ajouter</span></div></div>
+          <div class="real-body"><div class="tag">Dépannage</div><h3>Intervention ponctuelle</h3><p>Présente ici un problème résolu et la solution apportée au client.</p></div>
+        </article>
+      </div>
+
+      <div class="real-note">
+        <strong>À faire ensuite :</strong> quand tu auras quelques photos de tes interventions, on remplacera ces blocs par une galerie avant / après avec tes vraies réalisations.
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Comment ça marche</div>
+          <h2 class="section-title">Simple du premier contact<br>jusqu'à l'intervention.</h2>
         </div>
       </div>
-    </section>
+      <div class="process-grid">
+        <article class="process-card"><div class="process-number">01 · CONTACT</div><h3>Vous décrivez votre besoin</h3><p>Téléphone, e-mail ou formulaire : quelques informations suffisent pour démarrer.</p></article>
+        <article class="process-card"><div class="process-number">02 · ÉCHANGE</div><h3>On précise le projet</h3><p>Besoin, contraintes, photos, accès et niveau d'intervention sont précisés avant d'agir.</p></article>
+        <article class="process-card"><div class="process-number">03 · INTERVENTION</div><h3>La prestation est réalisée</h3><p>L'objectif : une intervention claire, soignée et adaptée au besoin défini ensemble.</p></article>
+      </div>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-kicker">Contact</div>
-        <h2 class="section-title">Parlons de votre projet.</h2>
-        <p class="section-sub">Une question, une intervention ou une demande de devis ? Contactez directement RM Multiservices.</p>
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Vous avez un projet ?</h2>
+          <p>Parlons-en. Décrivez votre besoin et RM Multiservices vous répondra rapidement.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="#contact">Demander un devis</a>
+          <a class="btn btn-ghost" href="tel:0693433434">Appeler maintenant</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="contact-grid">
-          <div class="contact-panel">
-            <h3>RM Multiservices</h3>
-            <p>Travaux de rénovation · Piscine · Dépannage · Conciergerie</p>
-            <div class="contact-list">
-              <a class="contact-row" href="tel:0693433434"><div class="bubble">☎</div><div><small>Téléphone</small><strong>0693 43 34 34</strong></div></a>
-              <a class="contact-row" href="mailto:rm.multiservices974@gmail.com"><div class="bubble">✉</div><div><small>E-mail</small><strong>rm.multiservices974@gmail.com</strong></div></a>
-              <div class="contact-row"><div class="bubble">⌖</div><div><small>Secteur</small><strong>La Réunion</strong></div></div>
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Parlons de votre projet.</h2>
+          <p class="section-subtitle">Une question, une intervention ou une demande de devis ? Contactez RM Multiservices.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>RM Multiservices</h3>
+          <p>Travaux de rénovation, piscine, dépannage et conciergerie à La Réunion.</p>
+          <div class="contact-list">
+            <a class="contact-item" href="tel:0693433434"><div class="contact-icon">☎</div><div><small>Téléphone</small><strong>0693 43 34 34</strong></div></a>
+            <a class="contact-item" href="mailto:rm.multiservices974@gmail.com"><div class="contact-icon">✉</div><div><small>E-mail</small><strong>rm.multiservices974@gmail.com</strong></div></a>
+            <div class="contact-item"><div class="contact-icon">⌂</div><div><small>Secteur</small><strong>La Réunion</strong></div></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Demande de devis</h3>
+          <p>Quelques informations suffisent. Vous pourrez ensuite ajouter des précisions ou des photos par e-mail.</p>
+          <form class="form" id="quoteForm">
+            <div class="form-row">
+              <div class="field"><label for="name">Nom</label><input id="name" name="name" required placeholder="Votre nom"></div>
+              <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" placeholder="06..." ></div>
             </div>
-          </div>
-
-          <div class="contact-panel">
-            <h3>Demande de devis</h3>
-            <p>Quelques informations suffisent pour commencer.</p>
-            <form action="mailto:rm.multiservices974@gmail.com" method="post" enctype="text/plain">
-              <div class="row">
-                <div class="field"><label for="nom">Nom</label><input id="nom" name="Nom" required placeholder="Votre nom"></div>
-                <div class="field"><label for="tel">Téléphone</label><input id="tel" name="Téléphone" type="tel" placeholder="06..." ></div>
-              </div>
-              <div class="field"><label for="email">E-mail</label><input id="email" name="E-mail" type="email" required placeholder="votre@email.com"></div>
-              <div class="field"><label for="service">Prestation</label><select id="service" name="Prestation"><option>Travaux de rénovation</option><option>Piscine</option><option>Dépannage</option><option>Conciergerie</option><option>Autre</option></select></div>
-              <div class="field"><label for="message">Votre demande</label><textarea id="message" name="Message" required placeholder="Décrivez votre besoin..."></textarea></div>
-              <button class="btn btn-primary" type="submit">Envoyer ma demande →</button>
-              <div class="form-note">Le bouton ouvre votre logiciel de messagerie pour préparer l'e-mail.</div>
-            </form>
-          </div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="votre@email.com"></div>
+            <div class="field"><label for="service">Prestation</label>
+              <select id="service" name="service">
+                <option value="Travaux de rénovation">Travaux de rénovation</option>
+                <option value="Piscine">Piscine</option>
+                <option value="Dépannage">Dépannage</option>
+                <option value="Conciergerie">Conciergerie</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">Votre demande</label><textarea id="message" name="message" required placeholder="Décrivez votre besoin..."></textarea></div>
+            <button class="btn btn-primary" type="submit">Préparer ma demande de devis →</button>
+            <div class="form-note">Le bouton prépare un e-mail adressé directement à RM Multiservices. Le formulaire en ligne pourra être connecté à un service d'envoi dédié ensuite.</div>
+          </form>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer">
-      <small>© 2026 RM Multiservices — La Réunion</small>
-      <div class="footer-links"><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
     </div>
-  </footer>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div class="footer-brand"><img src="assets/logo-horizontal.png" alt="RM Multiservices"></div>
+    <div class="footer-copy">© 2026 RM Multiservices · La Réunion</div>
+    <div class="footer-links"><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  document.getElementById('quoteForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const subject = `Demande de devis - ${data.get('service') || 'RM Multiservices'}`;
+    const body = [
+      `Nom : ${data.get('name') || ''}`,
+      `Téléphone : ${data.get('phone') || ''}`,
+      `E-mail : ${data.get('email') || ''}`,
+      `Prestation : ${data.get('service') || ''}`,
+      '',
+      'Demande :',
+      `${data.get('message') || ''}`
+    ].join('\n');
+    window.location.href = `mailto:rm.multiservices974@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
 </body>
 </html>
