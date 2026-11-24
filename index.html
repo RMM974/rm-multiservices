@@ -4,9 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#006CFF">
-  <meta name="description" content="RM Multiservices à La Réunion : travaux de rénovation, entretien de piscine, dépannage et conciergerie. Une seule entreprise pour vos besoins du quotidien.">
+  <meta name="description" content="RM Multiservices à La Réunion : rénovation, entretien de piscine, dépannage, conciergerie, nettoyage, espaces verts et entretien courant. Demandez un devis.">
+  <link rel="canonical" href="https://rm-multiservices.re/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_RE">
+  <meta property="og:title" content="RM Multiservices à La Réunion | Rénovation, nettoyage et entretien">
+  <meta property="og:description" content="RM Multiservices à La Réunion : rénovation, entretien de piscine, dépannage, conciergerie, nettoyage, espaces verts et entretien courant. Demandez un devis.">
+  <meta property="og:url" content="https://rm-multiservices.re/">
+  <meta property="og:image" content="https://rm-multiservices.re/assets/logo-principal.png">
   <link rel="icon" href="assets/rm-mark.png" type="image/png">
-  <title>RM Multiservices | Travaux de rénovation, piscine, dépannage & conciergerie</title>
+  <title>RM Multiservices à La Réunion | Rénovation, nettoyage et entretien</title>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RM Multiservices",
+  "url": "https://rm-multiservices.re/",
+  "logo": "https://rm-multiservices.re/assets/logo-principal.png",
+  "email": "contact@rm-multiservices.re",
+  "telephone": "+262693433434",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "La Réunion"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prestations",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Travaux de rénovation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Piscine"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dépannage"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Conciergerie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Espaces verts"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Entretien courant"
+        }
+      }
+    ]
+  }
+}
+  </script>
 
   <style>
     :root{
@@ -92,20 +170,6 @@
     .point{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800}
     .point b{width:24px;height:24px;border-radius:50%;background:rgba(0,108,255,.10);color:var(--blue);display:grid;place-items:center;font-size:12px}
 
-    /* Realisations */
-    .realisations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .real-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(14,47,95,.05)}
-    .real-media{height:220px;display:grid;place-items:center;background:linear-gradient(145deg,#0A1B36,#0054C8 60%,#4A9BFF);position:relative}
-    .real-media:nth-child(2){background:linear-gradient(145deg,#0A1730,#006CFF 65%,#9CC8FF)}
-    .real-media:nth-child(3){background:linear-gradient(145deg,#111827,#0045A8 60%,#48A3FF)}
-    .real-placeholder{color:#fff;text-align:center;padding:24px}
-    .real-placeholder strong{display:block;font-size:26px;margin-bottom:6px}
-    .real-placeholder span{font-size:12px;color:rgba(255,255,255,.72)}
-    .real-body{padding:21px}
-    .real-body .tag{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;font-weight:900;color:var(--blue)}
-    .real-body h3{margin-top:8px;font-size:20px}
-    .real-body p{margin-top:7px;color:var(--muted);font-size:13px}
-    .real-note{margin-top:18px;padding:14px 16px;border-radius:14px;background:var(--soft);color:#475467;font-size:12px}
 
     /* Process */
     .process{background:#fff}
@@ -152,11 +216,30 @@
     .footer-copy{font-size:11px;color:#7A8495}
     .footer-links{display:flex;gap:20px;font-size:12px;font-weight:800;color:#475467}
 
+    [hidden]{display:none!important}
+    :focus-visible{outline:3px solid var(--blue-deep);outline-offset:4px}
+    .skip-link{position:fixed;top:8px;left:8px;z-index:100;background:#fff;padding:12px;transform:translateY(-150%)}
+    .skip-link:focus{transform:none}
+    main,[id]{scroll-margin-top:90px}
+    .footer-links{flex-wrap:wrap}
+    .footer-links a{display:inline-flex;align-items:center;min-height:44px}
+    .contact-card,.form-card,.field,.contact-item>div{min-width:0}
+    .contact-item strong{overflow-wrap:anywhere}
+    .contact-icon{flex-shrink:0}
+    .form-note,.footer-copy,.contact-item small{color:var(--muted)}
+    .form-status{margin-top:12px;color:var(--ink)}
+    .form-status a{text-decoration:underline;color:var(--blue-deep)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue-2),#075BCB)}
+    .section-kicker,.service small,.eyebrow{color:var(--blue-2)}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition:none!important}
+    }
+
     /* Responsive */
     @media(max-width:1000px){
       .hero-grid,.highlight-grid,.contact-grid{grid-template-columns:1fr}
       .services-grid{grid-template-columns:1fr 1fr}
-      .realisations-grid{grid-template-columns:1fr 1fr}
       .process-grid{grid-template-columns:1fr}
       .highlight-visual{min-height:340px}
       .cta-box{flex-direction:column;align-items:flex-start}
@@ -165,12 +248,15 @@
     @media(max-width:720px){
       .container{width:min(100% - 28px,1180px)}
       .brand img{width:185px}
-      .nav-links{display:none;position:absolute;left:14px;right:14px;top:74px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:14px}
-      .nav-links.open{display:flex}
-      .nav-links a{padding:8px 4px}
-      .menu-btn{display:grid;place-items:center}
-      .nav-cta{text-align:center}
-      .services-grid,.realisations-grid,.form-row,.points{grid-template-columns:1fr}
+      .menu-btn:not([hidden]) + .nav-links{display:none;position:absolute;left:14px;right:14px;top:100%;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:14px}
+      .menu-btn[aria-expanded="true"] + .nav-links{display:flex}
+      .nav-links a{padding:10px 6px;min-height:44px;display:flex;align-items:center}
+      .menu-btn:not([hidden]){display:grid;place-items:center}
+      .nav:has(.menu-btn[hidden]){height:auto;min-height:78px;flex-wrap:wrap;padding:10px 0;gap:8px}
+      .nav-links{flex-wrap:wrap;gap:8px 16px}
+      .menu-btn:not([hidden]) + .nav-links{flex-wrap:nowrap;max-height:calc(100dvh - 78px);overflow:auto}
+      .nav-cta{justify-content:center}
+      .services-grid,.form-row,.points{grid-template-columns:1fr}
       .hero{padding:60px 0 68px}
       h1{letter-spacing:-1.8px}
       .hero-copy{font-size:16px}
@@ -185,17 +271,18 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
 
 <header>
   <div class="container nav">
     <a class="brand" href="#accueil" aria-label="RM Multiservices">
       <img src="assets/logo-horizontal.png" alt="RM Multiservices - logo">
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
-    <nav class="nav-links" id="navLinks">
+    <button class="menu-btn" id="menuBtn" type="button" hidden aria-label="Menu principal" aria-controls="navLinks" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#services">Services</a>
-      <a href="#realisations">Réalisations</a>
+
       <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
       <a class="nav-cta" href="#contact">Demander un devis</a>
@@ -203,19 +290,19 @@
   </div>
 </header>
 
-<main>
+<main id="contenu" tabindex="-1">
   <section class="hero" id="accueil">
     <div class="container hero-grid">
       <div>
         <div class="eyebrow"><i></i> RM Multiservices · La Réunion</div>
         <h1>Votre projet,<br><span>notre savoir-faire.</span></h1>
         <p class="hero-copy">
-          Travaux de rénovation, entretien de piscine, dépannage et conciergerie :
-          une seule entreprise pour des interventions soignées, claires et adaptées à vos besoins.
+          À La Réunion, RM Multiservices intervient pour vos travaux de rénovation, votre piscine,
+          le dépannage, la conciergerie, le nettoyage, les espaces verts et l’entretien courant.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Demander un devis →</a>
-          <a class="btn btn-light" href="tel:0693433434">0693 43 34 34</a>
+          <a class="btn btn-light" href="tel:+262693433434">0693 43 34 34</a>
         </div>
         <div class="hero-meta">
           <span><b></b> Réactif</span>
@@ -247,7 +334,7 @@
       <div class="services-grid">
         <article class="service">
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/><path d="m8.5 11 2-2 1.5 1.5 3.5-3.5"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/><path d="m8.5 11 2-2 1.5 1.5 3.5-3.5"/></svg>
           </div>
           <h3>Travaux de rénovation</h3>
           <p>Rénovation légère, aménagement et amélioration de l'habitat selon les besoins du projet.</p>
@@ -256,7 +343,7 @@
 
         <article class="service">
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18V9a3 3 0 0 1 6 0v9"/><path d="M12 11h5a2 2 0 0 1 2 2v5M3 19c2 1.2 4 1.2 6 0 2-1.2 4-1.2 6 0 2 1.2 4 1.2 6 0"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18V9a3 3 0 0 1 6 0v9"/><path d="M12 11h5a2 2 0 0 1 2 2v5M3 19c2 1.2 4 1.2 6 0 2-1.2 4-1.2 6 0 2 1.2 4 1.2 6 0"/></svg>
           </div>
           <h3>Piscine</h3>
           <p>Entretien, nettoyage, suivi et petites interventions pour garder votre piscine propre et agréable.</p>
@@ -265,7 +352,7 @@
 
         <article class="service">
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14.7 6.3 3-3 3 3-3 3M4 20l8.2-8.2"/><path d="m9.8 4.5 9.7 9.7M4 20l3.5-.7 4.8-4.8-2.8-2.8-4.8 4.8L4 20Z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14.7 6.3 3-3 3 3-3 3M4 20l8.2-8.2"/><path d="m9.8 4.5 9.7 9.7M4 20l3.5-.7 4.8-4.8-2.8-2.8-4.8 4.8L4 20Z"/></svg>
           </div>
           <h3>Dépannage</h3>
           <p>Interventions ponctuelles pour résoudre rapidement les problèmes et remettre les choses en ordre.</p>
@@ -274,11 +361,38 @@
 
         <article class="service">
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5h16v5H4z"/><path d="M7 11.5V8h10v3.5M5 16.5v2M19 16.5v2M8 18.5h8"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5h16v5H4z"/><path d="M7 11.5V8h10v3.5M5 16.5v2M19 16.5v2M8 18.5h8"/></svg>
           </div>
           <h3>Conciergerie</h3>
           <p>Prestations de proximité pour villas et logements saisonniers : contrôle, entretien et suivi.</p>
           <small>Villas & saisonnier</small>
+        </article>
+
+        <article class="service">
+          <div class="icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M7 20l2-7h6l2 7M12 13V3"/></svg>
+          </div>
+          <h3>Nettoyage</h3>
+          <p>Nettoyage ponctuel ou régulier de vos espaces intérieurs et extérieurs.</p>
+          <small>Ponctuel & régulier</small>
+        </article>
+
+        <article class="service">
+          <div class="icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14Zm0 0 8-8"/></svg>
+          </div>
+          <h3>Espaces verts</h3>
+          <p>Entretien des jardins et espaces verts selon vos besoins.</p>
+          <small>Jardins & extérieurs</small>
+        </article>
+
+        <article class="service">
+          <div class="icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H5v14h14V5h-4M9 3h6v4H9zM8 13l3 3 5-5"/></svg>
+          </div>
+          <h3>Entretien courant</h3>
+          <p>Petits travaux d’entretien pour garder votre logement ou vos locaux en bon état.</p>
+          <small>Logements & locaux</small>
         </article>
       </div>
     </div>
@@ -301,37 +415,6 @@
           <div class="point"><b>✓</b> Interlocuteur unique</div>
           <div class="point"><b>✓</b> Prestations adaptées</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="realisations">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Réalisations</div>
-          <h2 class="section-title">Des projets à montrer.<br>Des résultats à raconter.</h2>
-          <p class="section-subtitle">Cette galerie sera progressivement remplie avec tes propres photos de chantiers, interventions et avant / après.</p>
-        </div>
-      </div>
-
-      <div class="realisations-grid">
-        <article class="real-card">
-          <div class="real-media"><div class="real-placeholder"><strong>Avant / Après</strong><span>Photo de rénovation à ajouter</span></div></div>
-          <div class="real-body"><div class="tag">Travaux de rénovation</div><h3>Votre prochaine réalisation</h3><p>Une présentation courte du besoin, de l'intervention et du résultat.</p></div>
-        </article>
-        <article class="real-card">
-          <div class="real-media"><div class="real-placeholder"><strong>Piscine</strong><span>Photo d'entretien à ajouter</span></div></div>
-          <div class="real-body"><div class="tag">Piscine</div><h3>Entretien & suivi</h3><p>Un espace idéal pour montrer la qualité de tes interventions avant / après.</p></div>
-        </article>
-        <article class="real-card">
-          <div class="real-media"><div class="real-placeholder"><strong>Dépannage</strong><span>Photo d'intervention à ajouter</span></div></div>
-          <div class="real-body"><div class="tag">Dépannage</div><h3>Intervention ponctuelle</h3><p>Présente ici un problème résolu et la solution apportée au client.</p></div>
-        </article>
-      </div>
-
-      <div class="real-note">
-        <strong>À faire ensuite :</strong> quand tu auras quelques photos de tes interventions, on remplacera ces blocs par une galerie avant / après avec tes vraies réalisations.
       </div>
     </div>
   </section>
@@ -361,7 +444,7 @@
         </div>
         <div class="cta-actions">
           <a class="btn btn-white" href="#contact">Demander un devis</a>
-          <a class="btn btn-ghost" href="tel:0693433434">Appeler maintenant</a>
+          <a class="btn btn-ghost" href="tel:+262693433434">Appeler maintenant</a>
         </div>
       </div>
     </div>
@@ -380,35 +463,39 @@
       <div class="contact-grid">
         <div class="contact-card">
           <h3>RM Multiservices</h3>
-          <p>Travaux de rénovation, piscine, dépannage et conciergerie à La Réunion.</p>
+          <p>Interventions à La Réunion pour les particuliers, les propriétaires et les professionnels.</p>
           <div class="contact-list">
-            <a class="contact-item" href="tel:0693433434"><div class="contact-icon">☎</div><div><small>Téléphone</small><strong>0693 43 34 34</strong></div></a>
-            <a class="contact-item" href="mailto:rm.multiservices974@gmail.com"><div class="contact-icon">✉</div><div><small>E-mail</small><strong>rm.multiservices974@gmail.com</strong></div></a>
+            <a class="contact-item" href="tel:+262693433434"><div class="contact-icon">☎</div><div><small>Téléphone</small><strong>0693 43 34 34</strong></div></a>
+            <a class="contact-item" href="mailto:contact@rm-multiservices.re"><div class="contact-icon">✉</div><div><small>E-mail</small><strong>contact@rm-multiservices.re</strong></div></a>
             <div class="contact-item"><div class="contact-icon">⌂</div><div><small>Secteur</small><strong>La Réunion</strong></div></div>
           </div>
         </div>
 
         <div class="form-card">
           <h3>Demande de devis</h3>
-          <p>Quelques informations suffisent. Vous pourrez ensuite ajouter des précisions ou des photos par e-mail.</p>
-          <form class="form" id="quoteForm">
+          <p class="form-status" id="quoteStatus" role="status">Contactez-nous par <a href="mailto:contact@rm-multiservices.re">e-mail</a> ou par <a href="tel:+262693433434">téléphone</a>.</p>
+          <form class="form" id="quoteForm" action="/api/devis" method="post" hidden>
             <div class="form-row">
-              <div class="field"><label for="name">Nom</label><input id="name" name="name" required placeholder="Votre nom"></div>
-              <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" placeholder="06..." ></div>
+              <div class="field"><label for="name">Nom</label><input id="name" name="name" autocomplete="name" maxlength="120" required placeholder="Votre nom"></div>
+              <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="06..." ></div>
             </div>
-            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="votre@email.com"></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
             <div class="field"><label for="service">Prestation</label>
               <select id="service" name="service">
                 <option value="Travaux de rénovation">Travaux de rénovation</option>
                 <option value="Piscine">Piscine</option>
                 <option value="Dépannage">Dépannage</option>
                 <option value="Conciergerie">Conciergerie</option>
+                <option value="Nettoyage">Nettoyage</option>
+                <option value="Espaces verts">Espaces verts</option>
+                <option value="Entretien courant">Entretien courant</option>
                 <option value="Autre">Autre</option>
               </select>
             </div>
-            <div class="field"><label for="message">Votre demande</label><textarea id="message" name="message" required placeholder="Décrivez votre besoin..."></textarea></div>
-            <button class="btn btn-primary" type="submit">Préparer ma demande de devis →</button>
-            <div class="form-note">Le bouton prépare un e-mail adressé directement à RM Multiservices. Le formulaire en ligne pourra être connecté à un service d'envoi dédié ensuite.</div>
+            <div class="field"><label for="message">Votre demande</label><textarea id="message" name="message" maxlength="3000" required placeholder="Décrivez votre besoin..."></textarea></div>
+            <div id="quoteChallenge"></div>
+            <button class="btn btn-primary" type="submit">Envoyer ma demande de devis</button>
+            <p class="form-note">Vos coordonnées et votre message servent à traiter votre demande de devis.</p>
           </form>
         </div>
       </div>
@@ -420,31 +507,10 @@
   <div class="container footer">
     <div class="footer-brand"><img src="assets/logo-horizontal.png" alt="RM Multiservices"></div>
     <div class="footer-copy">© 2026 RM Multiservices · La Réunion</div>
-    <div class="footer-links"><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></div>
+    <div class="footer-links"><a href="#services">Services</a><a href="#contact">Contact</a></div>
   </div>
 </footer>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  document.getElementById('quoteForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = `Demande de devis - ${data.get('service') || 'RM Multiservices'}`;
-    const body = [
-      `Nom : ${data.get('name') || ''}`,
-      `Téléphone : ${data.get('phone') || ''}`,
-      `E-mail : ${data.get('email') || ''}`,
-      `Prestation : ${data.get('service') || ''}`,
-      '',
-      'Demande :',
-      `${data.get('message') || ''}`
-    ].join('\n');
-    window.location.href = `mailto:rm.multiservices974@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-</script>
+<script src="/site.js" defer></script>
 </body>
 </html>
